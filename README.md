@@ -143,7 +143,7 @@ The project uses Gradle. To build the application, open a terminal in the projec
 
 ## Get User Profile
 
-- **URL:** `http://localhost:8080/users/{user_id}/user_profile`
+- **URL:** `http://localhost:8080/users//user-profile`
 - **Method:** `GET`
 - **Authorization:** Requires Bearer Token (JWT)
 - **Response Format:** `application/json`
