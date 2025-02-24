@@ -1,0 +1,20 @@
+# Compiled class files
+build/
+*.class
+
+# Log files
+*.log
+
+# Environment files
+.env
+
+# IDE and editor files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Gradle files
+.gradle/
+gradlew.bat
