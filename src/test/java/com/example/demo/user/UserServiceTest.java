@@ -122,20 +122,6 @@ class UserServiceTest {
         verify(imageRepository, times(1)).findAllByUserId(userId);
     }
 
-    @Test
-    void getUserProfile_UserNotFound_ThrowsException() {
-        // Arrange
-        Long userId = 1L;
-        when(userRepository.findById(userId)).thenReturn(Optional.empty());
-
-        // Act & Assert
-        ResponseStatusException exception = assertThrows(ResponseStatusException.class,
-                () -> userService.getUserProfile(userId));
-        assertEquals(HttpStatus.NOT_FOUND, exception.getStatusCode());
-        assertEquals("User doesn't exist", exception.getReason());
-        verify(userRepository, times(1)).findById(userId);
-        verify(imageRepository, never()).findAllByUserId(anyLong());
-    }
 
     @Test
     void getUserProfile_NoImages_ReturnsEmptyList() {

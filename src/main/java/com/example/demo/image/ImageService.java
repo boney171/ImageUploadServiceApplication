@@ -54,9 +54,6 @@ public class ImageService {
     }
 
     public Map<String,String> deleteUserImage(Long userId, Long imageId) throws IOException, ExecutionException, InterruptedException {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User doesn't exist"));
-
         Image image = imageRepository.findById(imageId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Image doesn't exist"));
 

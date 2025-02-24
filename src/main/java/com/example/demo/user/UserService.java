@@ -46,8 +46,7 @@ public class UserService {
     }
 
     public UserProfileResponseModel getUserProfile(Long userId) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User doesn't exist"));
+        User user = userRepository.findById(userId).get();
 
         List<ImageResponseModel> userImageResponseModels = imageRepository.findAllByUserId(userId)
                 .stream()

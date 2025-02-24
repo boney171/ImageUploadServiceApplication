@@ -9,17 +9,16 @@ import io.github.cdimascio.dotenv.Dotenv;
 @EnableAsync
 public class SynchronyApplication {
 
-	public static void main(String[] args) {
-		Dotenv dotenv = Dotenv.configure()
-				.directory("./")
-				.load();
+    public static void main(String[] args) {
+        Dotenv dotenv = Dotenv.configure()
+                .directory("./")
+                .load();
 
-		// Set environment variables as system properties so Spring can use them
-		dotenv.entries().forEach(entry ->
-				System.setProperty(entry.getKey(), entry.getValue())
-		);
+        dotenv.entries().forEach(entry ->
+                System.setProperty(entry.getKey(), entry.getValue())
+        );
 
-		SpringApplication.run(SynchronyApplication.class, args);
-	}
+        SpringApplication.run(SynchronyApplication.class, args);
+    }
 
 }
